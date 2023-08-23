@@ -1,0 +1,18 @@
+<h2>Name: {{ user.name}}</h2>
+<ul>
+  <li>Age: {{ user.age}}</li>
+  <li>Email: {{ user.email}}</li>
+  <li> Address
+    <dl>
+      <dt>Street:</dt>
+      <dd>{{ user.address.street}}</dd>
+      <dt>City:</dt>
+      <dd>{{ user.address.city}}</dd>
+      <dt>State:</dt>
+      <dd>{{ user.address.state}}</dd>
+    </dl>
+  </li>
+</ul>
+
+<button type="button"
+  (click)="sendUserEvent(user)">Click Me!</button>
