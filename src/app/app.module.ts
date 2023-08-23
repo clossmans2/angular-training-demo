@@ -12,6 +12,8 @@ import { DataService } from './data-service.service';
 import { UserService } from './user.service';
 import { HighlightDirective } from './highlight.directive';
 import { ReverseStrPipe } from './reverse-str.pipe';
+import { ShelterComponent } from './shelter/shelter.component';
+import { ShelterDetailComponent } from './shelter-detail/shelter-detail.component';
 
 
 @NgModule({
@@ -20,7 +22,9 @@ import { ReverseStrPipe } from './reverse-str.pipe';
     HomeComponent,
     UserComponent,
     HighlightDirective,
-    ReverseStrPipe
+    ReverseStrPipe,
+    ShelterComponent,
+    ShelterDetailComponent
   ],
   imports: [
     BrowserModule,

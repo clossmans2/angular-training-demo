@@ -1,7 +1,7 @@
 import { Component, ViewChild } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { User } from '../user';
-import { Observable, Subscription } from 'rxjs';
+import { Observable, ObservableInput, Subscription, catchError } from 'rxjs';
 import { DataService } from '../data-service.service';
 import { UserComponent } from '../user/user.component';
 import { UserService } from '../user.service';
@@ -33,10 +33,15 @@ export class HomeComponent {
   }
 
   constructor(private http: HttpClient, private userService: UserService) {
-    this.subscription = this.userService.getUsers().subscribe(users => {
-      this.newUsers = users;
-    });
+    this.subscription = this.userService.getUsers().subscribe(
+      users => this.newUsers = users,
+      err => console.log(err)
+    );
     this.myUser = new User(15,'Seth', 35, 'sclossman@skillstorm.com', '123 Main St', 'Orlando', 'FL');
+  }
+
+  handleError(err: any): ObservableInput<any> {
+    throw new Error('Something happened in the subscription', err.message);
   }
 
   toggleActive(){

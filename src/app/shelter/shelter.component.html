@@ -1,0 +1,21 @@
+<h2>Available Animal Shelters</h2>
+<br>
+
+<table>
+  <thead>
+    <tr>
+      <th>Id</th>
+      <th>Name</th>
+      <th>Address</th>
+      <th>Phone</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let shelter of shelters">
+      <td>{{ shelter.id }}</td>
+      <td>{{ shelter.name }}</td>
+      <td>{{ shelter.address }}</td>
+      <td>{{ shelter.phone }}</td>
+    </tr>
+  </tbody>
+</table>
