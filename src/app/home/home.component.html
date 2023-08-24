@@ -1,4 +1,3 @@
-<h2 *ngIf="showGreeting" appHighlight>Hello {{ myUser.name }}!</h2>
 <h3 [ngClass]="{'active': isActive,'disabled': !isActive }">Content</h3>
 
 <p>{{ price | currency:'USD':'symbol':'2.2-2'}}</p>
@@ -14,37 +13,10 @@
 <button type="button" (click)="toggleActive()">Toggle Active</button>
 <!-- <img [src]="catUrl" alt="Cat image" /> -->
 <p><label for="userName">User Name:</label>
-<input id="userName" type="text" [(ngModel)]="myUser.name" /></p>
-
-<app-user #userRef
-  (userEvent)="handleUserEvent($event)"
-  [user]="myUser"></app-user>
+<input id="userName" type="text" [(ngModel)]="fontColor" /></p>
 
 <ul>
   <li *ngFor="let number of evenNumbers">{{ number }}</li>
 </ul>
 
-<table>
-  <thead>
-    <tr>
-      <th>Id</th>
-      <th>Name</th>
-      <th>Age</th>
-      <th>Email</th>
-      <th>Street</th>
-      <th>City</th>
-      <th>State</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr *ngFor="let user of newUsers; let i = index;">
-      <td>{{ user.id }}</td>
-      <td>{{ user.name }}</td>
-      <td>{{ user.age }}</td>
-      <td>{{ user.email }}</td>
-      <td>{{ user.address.street }}</td>
-      <td>{{ user.address.city }}</td>
-      <td>{{ user.address.state }}</td>
-    </tr>
-  </tbody>
-</table>
+

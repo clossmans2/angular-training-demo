@@ -1,21 +1,16 @@
-import { Component, ViewChild } from '@angular/core';
+import { Component, OnInit, ViewChild } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
-import { User } from '../user';
-import { Observable, ObservableInput, Subscription, catchError } from 'rxjs';
-import { DataService } from '../data-service.service';
-import { UserComponent } from '../user/user.component';
-import { UserService } from '../user.service';
+import { User } from '../users/user';
+import { ObservableInput, Subscription } from 'rxjs';
+import { UserService } from '../users/user.service';
+import { ReverseStrPipe } from '../shared/reverse-str.pipe';
 
 @Component({
   selector: 'app-home',
   templateUrl: './home.component.html',
   styleUrls: ['./home.component.css']
 })
-export class HomeComponent {
-  @ViewChild('userRef') userComponent!: UserComponent;
-  private subscription!: Subscription;
-  // usersUrl: string = 'api/users';
-  myUser: User;
+export class HomeComponent implements  OnInit {
   catUrl: string = 'https://cataas.com/cat';
   isActive: boolean = false;
   fontColor: string = 'blue';
@@ -28,16 +23,17 @@ export class HomeComponent {
 
   today: number = Date.now();
 
-  ngOnInit(): void {
-    console.log('HomeComponent initialized');
-  }
+  private subscription!: Subscription;
 
   constructor(private http: HttpClient, private userService: UserService) {
     this.subscription = this.userService.getUsers().subscribe(
       users => this.newUsers = users,
       err => console.log(err)
     );
-    this.myUser = new User(15,'Seth', 35, 'sclossman@skillstorm.com', '123 Main St', 'Orlando', 'FL');
+  }
+
+  ngOnInit(): void {
+    console.log('HomeComponent initialized');
   }
 
   handleError(err: any): ObservableInput<any> {
@@ -48,10 +44,6 @@ export class HomeComponent {
     this.isActive = !this.isActive;
   }
 
-  // getUsers(): Observable<User[]> {
-  //   return this.http.get<User[]>(this.usersUrl);
-  // }
-
   handleUserEvent(user: User){
     console.log(user);
   }
@@ -61,7 +53,7 @@ export class HomeComponent {
   }
 
   ngAfterViewInit(): void {
-    console.log('User Component: ', this.userComponent);
+    //console.log('User Component: ', this.userComponent);
     /// Use the ChangeDetectorRef service's detectChanges() method to trigger change detection
   }
 }

@@ -1,0 +1,24 @@
+<table>
+  <thead>
+    <tr>
+      <th>Id</th>
+      <th>Name</th>
+      <th>Age</th>
+      <th>Email</th>
+      <th>Street</th>
+      <th>City</th>
+      <th>State</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let user of newUsers; let i = index;">
+      <td>{{ user.id }}</td>
+      <td>{{ user.name }}</td>
+      <td>{{ user.age }}</td>
+      <td>{{ user.email }}</td>
+      <td>{{ user.address.street }}</td>
+      <td>{{ user.address.city }}</td>
+      <td>{{ user.address.state }}</td>
+    </tr>
+  </tbody>
+</table>
