@@ -6,11 +6,11 @@ import { AuthGuard } from '../shared/auth.guard';
 
 const routes: Routes = [
   { path: '', component: ShelterComponent },
-  { path: '/:id', component: ShelterDetailComponent, canActivate: [AuthGuard] },
+  { path: ':id', component: ShelterDetailComponent, canActivate: [AuthGuard] },
 ];
 
 @NgModule({
-  imports: [RouterModule.forRoot(routes)],
+  imports: [RouterModule.forChild(routes)],
   exports: [RouterModule]
 })
 export class ShelterRoutingModule { }
