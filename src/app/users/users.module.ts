@@ -6,6 +6,8 @@ import { UserRoutingModule } from './user-routing.module';
 import { UserListComponent } from './user-list/user-list.component';
 import { NewUserComponent } from './new-user/new-user.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { InputTextModule } from 'primeng/inputtext';
+import { TableModule } from 'primeng/table';
 import { UserEditComponent } from './user-edit/user-edit.component';
 
 
@@ -21,6 +23,8 @@ import { UserEditComponent } from './user-edit/user-edit.component';
     CommonModule,
     FormsModule,
     ReactiveFormsModule,
+    InputTextModule,
+    TableModule,
     UserRoutingModule
   ],
   providers: [UserService],

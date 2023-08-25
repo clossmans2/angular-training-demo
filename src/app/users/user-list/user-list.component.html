@@ -1,6 +1,6 @@
 <a routerLink="new">Create a new user</a>
-<table>
-  <thead>
+<p-table [value]="newUsers" styleClass="p-datatable-striped p-datatable-gridlines" [tableStyle]="{ 'min-width': '50rem' }">
+  <ng-template pTemplate="header">
     <tr>
       <th>Id</th>
       <th>Name</th>
@@ -10,9 +10,9 @@
       <th>City</th>
       <th>State</th>
     </tr>
-  </thead>
-  <tbody>
-    <tr *ngFor="let user of newUsers; let i = index;">
+  </ng-template>
+  <ng-template pTemplate="body" let-user>
+    <tr>
       <td>{{ user.id }}</td>
       <td><a routerLink="{{user.id}}/edit">{{ user.name }}</a></td>
       <td>{{ user.age }}</td>
@@ -21,5 +21,5 @@
       <td>{{ user.address.city }}</td>
       <td>{{ user.address.state }}</td>
     </tr>
-  </tbody>
-</table>
+  </ng-template>
+</p-table>

@@ -1,9 +1,12 @@
+
 import { Component } from '@angular/core';
-import { User } from '../user';
-import { Router } from '@angular/router';
-import { FormBuilder, FormControl, FormGroup } from '@angular/forms';
-import { UserService } from '../user.service';
 import { Validators } from '@angular/forms';
+import { Router } from '@angular/router';
+import { FormBuilder } from '@angular/forms';
+import { UserService } from '../user.service';
+
+import { User } from '../user';
+
 
 @Component({
   selector: 'app-new-user',
