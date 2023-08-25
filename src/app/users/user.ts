@@ -9,13 +9,13 @@ export class User {
     state: string
   }
   constructor(
-    id: number,
-    name: string,
-    age: number,
-    email: string,
-    street: string,
-    city: string,
-    state: string) {
+    id: number = 0,
+    name: string = '',
+    age: number = 0,
+    email: string = '',
+    street: string = '',
+    city: string = '',
+    state: string = '') {
       this.id = id;
     this.name = name;
     this.age = age;
