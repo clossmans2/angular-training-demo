@@ -6,6 +6,7 @@ import { UserRoutingModule } from './user-routing.module';
 import { UserListComponent } from './user-list/user-list.component';
 import { NewUserComponent } from './new-user/new-user.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { UserEditComponent } from './user-edit/user-edit.component';
 
 
 
@@ -13,7 +14,8 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
   declarations: [
     UserComponent,
     UserListComponent,
-    NewUserComponent
+    NewUserComponent,
+    UserEditComponent
   ],
   imports: [
     CommonModule,
@@ -22,6 +24,6 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
     UserRoutingModule
   ],
   providers: [UserService],
-  exports: [UserComponent, UserListComponent, NewUserComponent]
+  exports: [UserComponent, UserListComponent, NewUserComponent, UserEditComponent]
 })
 export class UsersModule {}
